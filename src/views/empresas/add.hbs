@@ -1,0 +1,86 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase"> Registrar empresa</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/add" method="post">
+                    
+                    <div class="input-group mt-2">
+                        <label for="nombre" class="input-group-text">Nombre</label>
+                        <input class="form-control" type="text" name="nombre" id="nombre" placeholder="Nombre de la empresa" required>
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="direccion" class="input-group-text">Dirección</label>
+                        <input class="form-control" type="text" name="direccion" id="direccion" placeholder="Dirección" required>
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="direccionfacturacion" class="input-group-text">Dirección Facturación</label>
+                        <input class="form-control" type="text" name="direccionfacturacion" id="direccionfacturacion" placeholder="Dirección de facturación">
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="representantelegal" class="input-group-text">Representante Legal</label>
+                        <input class="form-control" type="text" name="representantelegal" id="representantelegal" placeholder="Nombre del representante legal">
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="telefono" class="input-group-text">Teléfono</label>
+                        <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Teléfono">
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="correoelectronico" class="input-group-text">Correo Electrónico</label>
+                        <input class="form-control" type="email" name="correoelectronico" id="correoelectronico" placeholder="Correo electrónico">
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="codigopostal" class="input-group-text">Código Postal</label>
+                        <input class="form-control" type="text" name="codigopostal" id="codigopostal" placeholder="Código postal">
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="estado" class="input-group-text">Estado</label>
+                        <select class="form-control" name="estado" id="estado" required>
+                            <option value="" disabled selected>Seleccione un estado</option>
+                            <option value="A">Activo</option>
+                            <option value="I">Inactivo</option>
+                            <option value="PEN">Pendiente</option>
+                            <option value="DES">Desactivado</option>
+                            <option value="CAN">Cancelado</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="principal" class="input-group-text">Principal</label>
+                        <select class="form-control" name="principal" id="principal" required>
+                            <option value="" disabled selected>Seleccione</option>
+                            <option value="S">Sí</option>
+                            <option value="N">No</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="adiciono" class="input-group-text">Adicionó</label>
+                        <input class="form-control" type="text" name="adiciono" id="adiciono" placeholder="Nombre del que agregó" required>
+                    </div>
+
+                    <div class="input-group mt-2">
+                        <label for="fechaadicion" class="input-group-text">Fecha Adición</label>
+                        <input class="form-control" type="date" name="fechaadicion" id="fechaadicion" required>
+                    </div>
+
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success">Crear</button>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

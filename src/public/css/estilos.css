@@ -1,0 +1,24 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(218, 45%, 22%);
+  color: #fbfad6;
+  
+}
+
+.div1 {
+  background-color: hsla(218, 45%, 50%, 0.572)
+}
+
+.div2 {
+  background-color: hsla(218, 45%, 50%, 0.361)
+}
+
+.custom-navbar {
+    background-color: hsl(218, 53%, 19%);
+    
+  }
+.text_navbar {
+  color: hsl(218, 88%, 84%);
+}
+
+  

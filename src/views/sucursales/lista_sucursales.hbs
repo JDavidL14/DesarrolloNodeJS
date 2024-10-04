@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="row mt-5">
+        <h3 class="text-center text-uppercase p-4">Lista de sucursales</h3>
+        {{#if sucursales}}
+        
+            <table class="table text-center">
+                <thead>
+                    <tr class="table-dark">
+                        <th scope="col">Codigo</th>
+                        <th scope="col">ID Empresa</th>
+                        <th scope="col">Descripcion</th>
+                        <th scope="col">Direccion</th>
+                        <th scope="col">Telefono</th>
+                        <th scope="col">Encargado</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Editar/Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each sucursales}}
+                        <tr>
+                            <td>{{ idSucursal }}</td>
+                            <td>{{ idEmpresa }}</td>
+                            <td>{{ descripcion }}</td>
+                            <td>{{ direccion }}</td>
+                            <td>{{ telefono }}</td>
+                            <td>{{ encargado }}</td>
+                            <td>{{ estado }}</td>
+                            <td>
+                                <div>
+                                    <a href="/editS/{{idSucursal}}" class="p-2">
+                                    <i class="fa-solid fa-pen-to-square" style="color: #514d1f;"></i></a>
+                                    <a href="/deleteS/{{idSucursal}}" class="p-2">
+                                    <i class="fa-solid fa-user-minus" style="color: #691c1c;"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    {{/each}}
+                </tbody>
+                <tfoot></tfoot>
+            </table>
+        </div>
+        {{else}}
+            <div class="card text-center mx-auto" style="width: 350px;">
+                <div class="card-header">
+                    <h3>Debes registrar una sucursal</h3>
+                </div>
+                <div class="card-body">
+                    <p>Presiona para registrar una sucursal</p>
+                    <a href="/addS" class="btn btn-primary">Registrar</a>
+                </div>
+
+        {{/if}}
+    </div>
+</div>

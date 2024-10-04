@@ -1,0 +1,75 @@
+<div class="container p-4"></div>
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Editar sucursal</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/editS/{{sucursal.idSucursal}}" method="post">
+
+                    <!-- El idSucursal no es editable -->
+                    <div class="input-group mt-2">
+                        <label for="idSucursal" class="input-group-text">Código Sucursal</label>
+                        <input class="form-control" type="text" name="idSucursal" id="idSucursal" value="{{sucursal.idSucursal}}" disabled>
+                    </div>
+
+                    <!-- Seleccionar idEmpresa -->
+                    <div class="input-group mt-2">
+                        <label for="idEmpresa" class="input-group-text">Empresa</label>
+                        <select class="form-control" name="idEmpresa" id="idEmpresa" required>
+                            <option value="" disabled>Seleccione una empresa</option>
+                            {{#each empresas}}
+                                <option value="{{idEmpresa}}" {{#if (eq sucursal.idEmpresa empresas.idEmpresa)}}selected{{/if}}>{{idEmpresa}} - {{nombre}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+
+                    <!-- Descripción de la sucursal -->
+                    <div class="input-group mt-2">
+                        <label for="descripcion" class="input-group-text">Descripción</label>
+                        <input class="form-control" type="text" name="descripcion" id="descripcion" value="{{sucursal.descripcion}}" placeholder="Descripción de la sucursal" required>
+                    </div>
+
+                    <!-- Dirección -->
+                    <div class="input-group mt-2">
+                        <label for="direccion" class="input-group-text">Dirección</label>
+                        <input class="form-control" type="text" name="direccion" id="direccion" value="{{sucursal.direccion}}" placeholder="Dirección">
+                    </div>
+
+                    <!-- Teléfono -->
+                    <div class="input-group mt-2">
+                        <label for="telefono" class="input-group-text">Teléfono</label>
+                        <input class="form-control" type="text" name="telefono" id="telefono" value="{{sucursal.telefono}}" placeholder="Teléfono">
+                    </div>
+
+                    <!-- Encargado -->
+                    <div class="input-group mt-2">
+                        <label for="encargado" class="input-group-text">Encargado</label>
+                        <input class="form-control" type="text" name="encargado" id="encargado" value="{{sucursal.encargado}}" placeholder="Nombre del encargado">
+                    </div>
+
+                    <!-- Estado de la sucursal -->
+                    <div class="input-group mt-2">
+                        <label for="estado" class="input-group-text">Estado</label>
+                        <select class="form-control" name="estado" id="estado" required>
+                            <option value="" disabled {{#if (eq sucursal.estado "")}}selected{{/if}}>Seleccione un estado</option>
+                            <option value="A" {{#if (eq sucursal.estado 'A')}}selected{{/if}}>Activo</option>
+                            <option value="I" {{#if (eq sucursal.estado 'I')}}selected{{/if}}>Inactivo</option>
+                            <option value="PEN" {{#if (eq sucursal.estado 'PEN')}}selected{{/if}}>Pendiente</option>
+                            <option value="DES" {{#if (eq sucursal.estado 'DES')}}selected{{/if}}>Desactivado</option>
+                            <option value="CAN" {{#if (eq sucursal.estado 'CAN')}}selected{{/if}}>Cancelado</option>
+                        </select>
+                    </div>
+
+                    <!-- Botón para actualizar -->
+                    <div class="form-group mt-4 d-grid gap-2">
+                        <button class="btn btn-success">Actualizar</button>
+                    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

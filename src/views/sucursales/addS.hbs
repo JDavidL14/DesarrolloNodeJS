@@ -1,0 +1,64 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 mx-auto">
+            <div class="card text-center">
+                <div class="card-header">
+                    <h3 class="text-uppercase">Registrar Sucursal</h3>
+                </div>
+                <div class="card-body">
+                    <form action="/addS" method="post">
+
+                        <div class="input-group mt-2">
+                            <label for="idEmpresa" class="input-group-text">Empresa</label>
+                            <select class="form-control" name="idEmpresa" id="idEmpresa" required>
+                                <option value="" disabled selected>Seleccione una empresa</option>
+                                {{#each empresas}}
+                                    <option value="{{idEmpresa}}">{{idEmpresa}} - {{nombre}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+
+
+
+                        <div class="input-group mt-2">
+                            <label for="descripcion" class="input-group-text">Descripción</label>
+                            <input class="form-control" type="text" name="descripcion" id="descripcion" placeholder="Descripción de la sucursal" required>
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="direccion" class="input-group-text">Dirección</label>
+                            <input class="form-control" type="text" name="direccion" id="direccion" placeholder="Dirección de la sucursal">
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="telefono" class="input-group-text">Teléfono</label>
+                            <input class="form-control" type="text" name="telefono" id="telefono" placeholder="Teléfono de la sucursal">
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="encargado" class="input-group-text">Encargado</label>
+                            <input class="form-control" type="text" name="encargado" id="encargado" placeholder="Nombre del encargado">
+                        </div>
+
+                        <div class="input-group mt-2">
+                            <label for="estado" class="input-group-text">Estado</label>
+                            <select class="form-control" name="estado" id="estado" required>
+                                <option value="" disabled selected>Seleccione un estado</option>
+                                <option value="A">Activo</option>
+                                <option value="I">Inactivo</option>
+                                <option value="PEN">Pendiente</option>
+                                <option value="DES">Desactivado</option>
+                                <option value="CAN">Cancelado</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group mt-4 d-grid gap-2">
+                            <button class="btn btn-success">Crear</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
